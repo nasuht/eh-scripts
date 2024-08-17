@@ -43,7 +43,7 @@
 
         if (typeof toggle_category !== 'function') return;
 
-        for (const i = 0; i < 10; i++) {
+        for (let i = 0; i < 10; i++) {
             const binaryNumber = Math.pow(2, i).toString();
             const { dataset: { disabled: dis } } = document.querySelector(`#cat_${binaryNumber}`);
 
