@@ -1,13 +1,16 @@
 // ==UserScript==
 // @name         EH Category Helper
 // @namespace    nasu
-// @version      1.0.0
+// @version      1.0.1
 // @description  Adds some helpful category shortcuts to E-H.
 // @author       nasu
 // @include      /https?:\/\/e[-x]hentai\.org\/*/
 // @exclude      /https?:\/\/e[-x]hentai\.org\/g\/*/
 // @exclude      /https?:\/\/e[-x]hentai\.org\/*.php
+// @exclude      /https?:\/\/e[-x]hentai\.org\/mpv/*
 // @grant        none
+// @updateURL    https://github.com/nasuht/eh-scripts/raw/refs/heads/main/eh-category-helper.user.js
+// @downloadURL  https://github.com/nasuht/eh-scripts/raw/refs/heads/main/eh-category-helper.user.js
 // ==/UserScript==
 
 (() => {
@@ -73,7 +76,7 @@
 
         const links = document.querySelectorAll('.glink');
         if (window.confirm(`Open all ${links.length} galleries?`)) {
-            links.forEach(link => window.open(link.parentElement.href, '_blank').focus());
+            links.forEach(link => window.open(link.parentElement.href + '?hc=1', '_blank').focus());
         }
     };
 
